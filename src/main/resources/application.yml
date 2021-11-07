@@ -3,3 +3,11 @@ spring:
     name: accounts
   config:
     import: configserver:${CONFIG_SERVER_URL:http://localhost:9099}
+
+# bootstrap.yml에서 사용가능한 설정
+# 스프링 부트 2.4 이후 버전에서는 지원하지 않는다
+# https://multifrontgarden.tistory.com/278
+#spring:
+#  cloud:
+#    config:
+#      uri: http://localhost:9099
