@@ -23,12 +23,16 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
+    // spring cloud config
+    implementation("org.springframework.cloud:spring-cloud-starter-config")
+
+    // spring cloud netflix eureka
+    implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+
     // openapi
     implementation("org.springdoc:springdoc-openapi-ui:1.5.12")
     implementation("org.springdoc:springdoc-openapi-kotlin:1.5.12")
 
-    // spring cloud config
-    implementation("org.springframework.cloud:spring-cloud-starter-config")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
