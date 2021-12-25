@@ -3,6 +3,13 @@ spring:
     name: accounts
   config:
     import: configserver:${CONFIG_SERVER_URL:http://localhost:9099}
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:53306/msa
+    jpa:
+      hibernate:
+        ddl-auto: update
 
 # bootstrap.yml에서 사용가능한 설정
 # 스프링 부트 2.4 이후 버전에서는 지원하지 않는다
@@ -10,4 +17,5 @@ spring:
 #spring:
 #  cloud:
 #    config:
-#      uri: http://localhost:9099
+#      uri: http://localhost:909
+
