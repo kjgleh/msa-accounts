@@ -1,7 +1,7 @@
 package me.kjgleh.msa.accounts.serivce
 
-import me.kjgleh.msa.accounts.dto.AccountDto
 import me.kjgleh.msa.accounts.dto.SignupDto
+import me.kjgleh.msa.accounts.entity.Account
 import me.kjgleh.msa.accounts.repository.AccountRepository
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
@@ -14,12 +14,10 @@ class SignupService(
 ) {
 
     @Transactional
-    fun signup(signupDto: SignupDto): AccountDto {
+    fun signup(signupDto: SignupDto): Account {
         val signupDtoWithPasswordEncoded = signupDto.copy(
             password = passwordEncoder.encode(signupDto.password)
         )
-        val account =
-            accountRepository.save(signupDtoWithPasswordEncoded.toAccount())
-        return AccountDto.of(account)
+        return accountRepository.save(signupDtoWithPasswordEncoded.toAccount())
     }
 }
