@@ -3,13 +3,13 @@ package me.kjgleh.msa.accounts.dto
 import me.kjgleh.msa.accounts.entity.Account
 
 data class SignupDto(
-    val name: String,
+    val email: String,
     val password: String,
 ) {
 
     fun toAccount(): Account {
         return Account(
-            name = this.name,
+            email = this.email,
             password = this.password
         )
     }

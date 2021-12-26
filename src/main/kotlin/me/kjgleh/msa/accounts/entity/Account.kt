@@ -1,5 +1,6 @@
 package me.kjgleh.msa.accounts.entity
 
+import java.util.*
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -11,7 +12,9 @@ class Account(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0L,
 
-    val name: String,
+    val uuid: String = UUID.randomUUID().toString(),
+
+    val email: String,
 
     val password: String,
 ): BaseEntity()

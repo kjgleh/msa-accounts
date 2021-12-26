@@ -9,7 +9,7 @@ data class AccountDto(
     companion object {
         fun of(account: Account): AccountDto {
             return AccountDto(
-                name = account.name
+                name = account.email
             )
         }
     }
